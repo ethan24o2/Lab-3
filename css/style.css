@@ -1,1 +1,124 @@
 
+/* Reset default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    color: #222;
+}
+
+/* Mobile layout */
+.wrapper {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+    min-height: 100vh;
+}
+
+/* Named grid areas */
+.header {
+    grid-area: header;
+    background-color: #253b5b;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #dce6f2;
+    padding: 20px;
+}
+
+.nav ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.nav li {
+    margin-bottom: 12px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #253b5b;
+}
+
+.main {
+    grid-area: main;
+    min-width: 0;
+}
+
+/* Content cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+.card1 {
+    background-color: #e3edf8;
+}
+
+.card2 {
+    background-color: #e5f3ed;
+}
+
+.card3 {
+    background-color: #fff0df;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #253b5b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Desktop layout */
+@media screen and (min-width: 768px) {
+
+    .wrapper {
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+
+        grid-template-columns: 220px 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card1 {
+        grid-column: 1 / -1;
+    }
+
+}
+
